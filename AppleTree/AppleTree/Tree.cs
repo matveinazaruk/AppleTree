@@ -35,6 +35,16 @@ namespace TP_LAB_1
             }
         }
 
+        public void Shake() {
+            Random rand = new Random();
+            int applesFalling = rand.Next(0, apples.Count);
+            for (int i = 0; i < applesFalling; i++)
+            {
+                Apple apple = new Apple();
+                apples.RemoveAt(0);
+            }
+        }
+
         public int AppleAmount
         {
             get { return apples.Count; }

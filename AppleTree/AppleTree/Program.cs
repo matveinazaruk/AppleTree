@@ -13,6 +13,7 @@ namespace TP_LAB_1
             Console.WriteLine("commands: ");
             Console.WriteLine("grow");
             Console.WriteLine("exit");
+            Console.WriteLine("shake");
             Console.WriteLine("enter smth please");
         }
 
@@ -27,6 +28,11 @@ namespace TP_LAB_1
                     break;
                 case "exit":
                     Console.WriteLine("goobye");
+                    break;
+                case "shake":
+                    Console.WriteLine("apple amount before shake: {0}", appleTree.AppleAmount);
+                    appleTree.Shake();
+                    Console.WriteLine("apple amount after shake: {0}", appleTree.AppleAmount);
                     break;
                 default:
                     Console.WriteLine("wrong command");
