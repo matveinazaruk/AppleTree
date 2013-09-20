@@ -22,17 +22,13 @@ namespace TP_LAB_1
             switch (command)
             {
                 case "grow":
-                    Console.WriteLine("apple amount before growth: {0}", appleTree.AppleAmount);
                     appleTree.Grow();
-                    Console.WriteLine("apple amount after growth: {0}", appleTree.AppleAmount);
                     break;
                 case "exit":
                     Console.WriteLine("goobye");
                     break;
                 case "shake":
-                    Console.WriteLine("apple amount before shake: {0}", appleTree.AppleAmount);
                     appleTree.Shake();
-                    Console.WriteLine("apple amount after shake: {0}", appleTree.AppleAmount);
                     break;
                 default:
                     Console.WriteLine("wrong command");
