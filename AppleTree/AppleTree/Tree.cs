@@ -13,15 +13,11 @@ namespace TP_LAB_1
 
         public Tree()
         {
-            Random rand = new Random();
             apples = new List<Apple>();
-            flowers = rand.Next(50, 250);
         }
 
         public Tree(int numberOfApples)
         {
-            Random rand = new Random();
-            flowers = rand.Next(50, 60);
             int amount = Math.Min(flowers, numberOfApples);
             apples = new List<Apple>(numberOfApples);
             for (int i = 0; i < amount; i++)
@@ -35,10 +31,10 @@ namespace TP_LAB_1
         public void Grow()
         {
             if (flowers == 0) {
-                Console.WriteLine("apples amount is max {0}, there is no flowers", this.AppleAmount);
+                Console.WriteLine("there is no flowers");
                 return;
             }
-            printInfo("before");
+            printInfo("before growth");
             Random rand = new Random();
             int applesGrowing = rand.Next(1, flowers);
             flowers -= applesGrowing;
@@ -49,7 +45,7 @@ namespace TP_LAB_1
                 apples.Add(apple);
             }
             reCountStones();
-            printInfo("after");    
+            printInfo("after growth");    
         }
 
         public void Shake()
@@ -58,7 +54,7 @@ namespace TP_LAB_1
                 Console.WriteLine("there are no more apples");
                 return;       
             }
-            printInfo("before");
+            printInfo("before shake");
             Random rand = new Random();
             int applesFalling = rand.Next(0, apples.Count);
             Console.WriteLine("SHAKING");
@@ -68,7 +64,7 @@ namespace TP_LAB_1
                 apples.RemoveAt(0);
             }
             reCountStones();
-            printInfo("after");
+            printInfo("after shake");
         }
 
         private void reCountStones() {
@@ -78,9 +74,16 @@ namespace TP_LAB_1
             }
         }
 
-        private void printInfo(string when) {
-            Console.WriteLine("apples amount {0} shake: {1}", when, this.AppleAmount);
-            Console.WriteLine("stones amount {0} growth: {1}", when, this.stones);            
+        public void printInfo(string when) {
+            Console.WriteLine("apples amount {0}: {1}", when, this.AppleAmount);
+            Console.WriteLine("stones amount {0}: {1}", when, this.stones);            
+        }
+
+        public void Blossom(){
+            Random rand = new Random();
+            Console.WriteLine("TREE BLOSSOMS");            
+            flowers = rand.Next(10, 200);
+            Console.WriteLine("amount fo flowers: {0}", flowers);
         }
 
         public int AppleAmount

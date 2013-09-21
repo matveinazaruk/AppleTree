@@ -11,9 +11,11 @@ namespace TP_LAB_1
         static void Menu()
         {
             Console.WriteLine("commands: ");
+            Console.WriteLine("blossom");
             Console.WriteLine("grow");
-            Console.WriteLine("exit");
             Console.WriteLine("shake");
+            Console.WriteLine("info");
+            Console.WriteLine("exit");
             Console.WriteLine("enter smth please");
         }
 
@@ -21,6 +23,9 @@ namespace TP_LAB_1
         {
             switch (command)
             {
+                case "blossom":
+                    appleTree.Blossom();
+                    break;
                 case "grow":
                     appleTree.Grow();
                     break;
@@ -29,6 +34,9 @@ namespace TP_LAB_1
                     break;
                 case "shake":
                     appleTree.Shake();
+                    break;
+                case "info":
+                    appleTree.printInfo("now");
                     break;
                 default:
                     Console.WriteLine("wrong command");
